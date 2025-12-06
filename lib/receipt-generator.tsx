@@ -23,8 +23,8 @@ export async function generateReceiptESCPOS(
       <Text>{"-----------------------------------------------"}</Text>
 
       {/* BILL INFO */}
-      <Row left={`Bill #: ${invoiceNumber}`} right={`Date: ${date}`} />
-      <Row left={`Time: ${time}`} right={`Cashier: CASHIER1`} />
+      {/* <Row left={`Bill #: ${invoiceNumber}`} right={`Date: ${date}`} /> */}
+      {/* <Row left={`Time: ${time}`} right={`Cashier: CASHIER1`} /> */}
 
       <Text>{"-----------------------------------------------"}</Text>
 

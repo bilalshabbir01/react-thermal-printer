@@ -106,7 +106,7 @@ export function ReceiptPreview({ items, shopName, invoiceNumber }: ReceiptPrevie
           <div className="text-lg">${calculateTotal().toFixed(2)}</div>
         </div>
 
-        <div className="text-center text-xs mt-3 text-gray-600">Thank you for your purchase!</div>
+        <div className="text-center text-xs mt-3 text-gray-600">Thank you!</div>
       </div>
     </div>
   )
