@@ -14,14 +14,10 @@ export async function generateReceiptESCPOS(
   const time = now.toLocaleTimeString()
 
   const receipt = Printer.render(
-    <Printer type="epson" width={48} color="black" > 
+    <Printer type="epson" width={48} color="black" >
       {/* SHOP NAME */}
       <Text align="center" bold size={{ width: 2, height: 2 }}>
-        {shopName}
-      </Text>
-
-      <Text align="center">
-        DUPLICATE
+        TABEDAR
       </Text>
 
       <Text>{"-----------------------------------------------"}</Text>
@@ -33,16 +29,16 @@ export async function generateReceiptESCPOS(
       <Text>{"-----------------------------------------------"}</Text>
 
       {/* TABLE HEADER */}
-      <Row 
-        left="Description" 
+      <Row
+        left="Description"
         right="Qty   Rate   Value"
       />
       <Text>{"-----------------------------------------------"}</Text>
 
       {/* ITEMS */}
       {items.map((item) => {
-        const value = (item.quantity * item.price).toFixed(2)
-        const rate = item.price.toFixed(2)
+        const value = (item.quantity * item.price)
+        const rate = item.price
 
         return (
           <>
@@ -58,17 +54,17 @@ export async function generateReceiptESCPOS(
       <Text>{"-----------------------------------------------"}</Text>
 
       {/* TOTALS */}
-      <Row left={`Total Items: ${items.length}`} right={total.toFixed(2)} bold />
+      <Row left={`Total Items: ${items.length}`} right={total} bold />
 
       {/* OPTIONAL DISCOUNT, PAYMENT ETC */}
-      <Row left="Net" right={total.toFixed(2)} bold />
+      <Row left="Net" right={total} bold />
       <Row left="Payment" right={"0.00"} />
       <Row left="Change" right={"0.00"} />
 
       <Text>{"-----------------------------------------------"}</Text>
 
       {/* FOOTER */}
-      <Text align="center">Thank you for shopping!</Text>
+      <Text align="center">Thank you for shopping</Text>
       <Text>{"\n\n\n"}</Text>
     </Printer>
   )
